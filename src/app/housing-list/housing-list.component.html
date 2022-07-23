@@ -2,8 +2,8 @@
 <input type="location-search" #search placeholder="Ex: Chicago" />
 <button (click)="searchHousingLocations(search.value)">Search</button>
 <article *ngFor="let location of results">
+  <img [src]="location.photo" alt="" />
   <p>{{ location.name }}</p>
-  <p>{{ location.city }}</p>
-  <p>{{ location.state }}</p>
+  <p>{{ location.city }}, {{ location.state }}</p>
   <button (click)="selectHousingLocation(location)">View</button>
 </article>

@@ -7,11 +7,16 @@
     ></app-housing-list>
   </section>
   <article>
-    <img [src]="selectedLocation?.photo" alt="" />
-    <p>{{ selectedLocation?.name }}</p>
-    <p>{{ selectedLocation?.availableUnits }}</p>
-    <p>{{ selectedLocation?.city }}</p>
-    <p>{{ selectedLocation?.laundry }}</p>
-    <p>{{ selectedLocation?.wifi }}</p>
+    <!-- ngIf removes conditional logic from being displayed  by checking if selectedLocation data exists-->
+    <ng-container *ngIf="selectedLocation">
+      <img [src]="selectedLocation?.photo" alt="" />
+      <p>{{ selectedLocation?.name }}</p>
+      <p>Available units: {{ selectedLocation?.availableUnits }}</p>
+      <p>{{ selectedLocation?.city }}, {{ selectedLocation?.state }}</p>
+      <p>
+        {{ selectedLocation?.laundry ? "Has laudry" : "Does not have laundry" }}
+      </p>
+      <p>{{ selectedLocation?.wifi ? "Has wifi" : "Does not have wifi" }}</p>
+    </ng-container>
   </article>
 </main>

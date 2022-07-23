@@ -9,6 +9,7 @@ import { HousingLocation } from './housing-location';
 export class AppComponent {
   title = 'fairhouse';
 
+  // Data
   housingLocationList: HousingLocation[] = [
     {
       name: 'Acme Fresh Start Housing',
@@ -39,6 +40,7 @@ export class AppComponent {
     },
   ];
 
+  // Variable to check if a location is selected after search
   selectedLocation: HousingLocation | undefined; // = this.housingLocationList[0];
 
   updateSelectedLocation(location: HousingLocation) {
