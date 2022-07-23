@@ -1,6 +1,17 @@
 <main>
   <header><img src="../assets/logo.svg" />Fairhouse</header>
   <section>
-    <app-housing-list></app-housing-list>
+    <app-housing-list
+      [locationList]="housingLocationList"
+      (selectedLocationEvent)="updateSelectedLocation($event)"
+    ></app-housing-list>
   </section>
+  <article>
+    <img [src]="selectedLocation?.photo" alt="" />
+    <p>{{ selectedLocation?.name }}</p>
+    <p>{{ selectedLocation?.availableUnits }}</p>
+    <p>{{ selectedLocation?.city }}</p>
+    <p>{{ selectedLocation?.laundry }}</p>
+    <p>{{ selectedLocation?.wifi }}</p>
+  </article>
 </main>
