@@ -40,7 +40,7 @@ export class AppComponent {
     },
   ];
 
-  // Variable to check if a location is selected after search
+  // Variable to check if a location is selected by pressing view button
   selectedLocation: HousingLocation | undefined; // = this.housingLocationList[0];
 
   updateSelectedLocation(location: HousingLocation) {
